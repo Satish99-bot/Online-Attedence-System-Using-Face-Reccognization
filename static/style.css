@@ -1,0 +1,429 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://res.cloudinary.com/govimg/image/upload/q_75,f_auto,w_2000,h_2000,c_limit/v1673477480/62014638b8d2f0524d45d995/loyalty-program-facial-recognition-jpeg.jpg");
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+
+}
+
+#main-header {
+    background-color: #23466b;
+    color: white;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+#sub-header {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#buttons-container {
+    background-color:#365084;
+    color: white;
+    text-align: center;
+    height: fit-content;
+    padding: 15px;
+    width: 100%;
+    margin-top: 10px;
+    margin: 35px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 15px;
+}
+
+#buttons-container button {
+    font-size: 20px;
+    padding: 10px 60px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#buttons-container button.active {
+    background-color: #0056b3;
+}
+
+#buttons-container button:hover {
+    background-color: #0056b3;
+}
+
+.action-button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: rgb(239, 228, 228);
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+#video-feed-container,
+#upload-container,
+#student-registration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#video-container {
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cam {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+#video-container h1,
+#buttons-container h1 {
+    margin: 0;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#image-upload-label {
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+#download-link {
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+#excel-download {
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#selected-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.selected-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: 120px;
+    margin: 5px;
+}
+
+.selected-image img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.selected-image p {
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#student-registration-form {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    margin-top: 20px;
+}
+
+#get-attendance-button {
+    margin-top: 20px;
+}
+
+#student-registration-form h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#student-registration-form input {
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#student-registration-form button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: black;
+}
+
+#modal-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#modal-image-container img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Universal transition and hover effects for buttons and clickable labels */
+button,
+#image-upload-label,
+#get-attendance-button,
+#excel-download {
+    transition: all 0.3s ease;
+}
+
+/* Hover: smooth lift and subtle glow */
+button:hover,
+#image-upload-label:hover,
+#get-attendance-button:hover,
+#excel-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0.95;
+}
+
+/* Clicked/pressed state */
+button:active,
+#image-upload-label:active,
+#get-attendance-button:active,
+#excel-download:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth transitions for containers */
+#student-registration-form,
+#video-container,
+#upload-content,
+.modal-content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Subtle hover effect for containers */
+#student-registration-form:hover,
+#video-container:hover,
+#upload-content:hover,
+.modal-content:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.01);
+}
+
+/* Pulse animation on hover */
+button:hover,
+#image-upload-label:hover,
+#get-attendance-button:hover,
+#excel-download:hover {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+/* Neon 3D Effect for Buttons */
+button,
+#image-upload-label,
+#get-attendance-button,
+#excel-download {
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.3),
+        0 0 10px rgba(0, 123, 255, 0.4),
+        0 0 20px rgba(0, 123, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+/* On hover: brighten the glow */
+button:hover,
+#image-upload-label:hover,
+#get-attendance-button:hover,
+#excel-download:hover {
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.4),
+        0 0 15px rgba(0, 123, 255, 0.6),
+        0 0 25px rgba(0, 123, 255, 0.4);
+}
+
+/* On click: push inward */
+button:active,
+#image-upload-label:active,
+#get-attendance-button:active,
+#excel-download:active {
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 8px rgba(0, 123, 255, 0.3);
+    transform: scale(0.98);
+}
+/* Delete Button Styles */
+#selected-images {
+    margin-top: 15px;
+  }
+  
+  /* Add/Modify these styles in your CSS */
+.image-item {
+    position: relative;
+    width:450px;
+    height:450px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+  }
+  
+  .image-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  .delete-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    cursor: pointer;
+    display: none;
+    padding: 0;
+    line-height: 1;
+  }
+  
+  .image-item:hover .delete-btn {
+    display: block;
+  }
+  
+  #selected-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .image-item p {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    font-size: 8px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
